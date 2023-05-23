@@ -31,18 +31,18 @@ public class SortsView extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         PanelOptions = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
+        btn10d = new javax.swing.JRadioButton();
+        btn100d = new javax.swing.JRadioButton();
+        btn1000d = new javax.swing.JRadioButton();
         jSeparator1 = new javax.swing.JSeparator();
         jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtDestino = new javax.swing.JTextArea();
         jComboBox1 = new javax.swing.JComboBox<>();
-        jRadioButton4 = new javax.swing.JRadioButton();
-        jRadioButton5 = new javax.swing.JRadioButton();
-        jRadioButton6 = new javax.swing.JRadioButton();
-        jRadioButton7 = new javax.swing.JRadioButton();
+        btnSelectedSort = new javax.swing.JRadioButton();
+        btnInsertSort = new javax.swing.JRadioButton();
+        btnMergeSort = new javax.swing.JRadioButton();
+        btnQuickSort = new javax.swing.JRadioButton();
         jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -55,14 +55,14 @@ public class SortsView extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         jLabel2.setText("Opções:");
 
-        GrupoOpcoes.add(jRadioButton1);
-        jRadioButton1.setText("10 digitos");
+        GrupoOpcoes.add(btn10d);
+        btn10d.setText("10 digitos");
 
-        GrupoOpcoes.add(jRadioButton2);
-        jRadioButton2.setText("100 digitos");
+        GrupoOpcoes.add(btn100d);
+        btn100d.setText("100 digitos");
 
-        GrupoOpcoes.add(jRadioButton3);
-        jRadioButton3.setText("1000 digitos");
+        GrupoOpcoes.add(btn1000d);
+        btn1000d.setText("1000 digitos");
 
         jButton1.setText("Gerar Vetor");
 
@@ -78,9 +78,9 @@ public class SortsView extends javax.swing.JFrame {
                     .addGroup(PanelOptionsLayout.createSequentialGroup()
                         .addGroup(PanelOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
-                            .addComponent(jRadioButton1)
-                            .addComponent(jRadioButton2)
-                            .addComponent(jRadioButton3))
+                            .addComponent(btn10d)
+                            .addComponent(btn100d)
+                            .addComponent(btn1000d))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -90,11 +90,11 @@ public class SortsView extends javax.swing.JFrame {
                 .addGap(12, 12, 12)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton1)
+                .addComponent(btn10d)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton2)
+                .addComponent(btn100d)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton3)
+                .addComponent(btn1000d)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -108,17 +108,17 @@ public class SortsView extends javax.swing.JFrame {
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ascendente", "Descendente" }));
 
-        GrupoSorts.add(jRadioButton4);
-        jRadioButton4.setText("SelectedSort");
+        GrupoSorts.add(btnSelectedSort);
+        btnSelectedSort.setText("SelectedSort");
 
-        GrupoSorts.add(jRadioButton5);
-        jRadioButton5.setText("InserSort");
+        GrupoSorts.add(btnInsertSort);
+        btnInsertSort.setText("InserSort");
 
-        GrupoSorts.add(jRadioButton6);
-        jRadioButton6.setText("MergeSort");
+        GrupoSorts.add(btnMergeSort);
+        btnMergeSort.setText("MergeSort");
 
-        GrupoSorts.add(jRadioButton7);
-        jRadioButton7.setText("QuickSort");
+        GrupoSorts.add(btnQuickSort);
+        btnQuickSort.setText("QuickSort");
 
         jButton2.setText("Reordenar");
 
@@ -136,13 +136,13 @@ public class SortsView extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jRadioButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnSelectedSort, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jRadioButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnInsertSort, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jRadioButton6)
+                                .addComponent(btnMergeSort)
                                 .addGap(18, 18, 18)
-                                .addComponent(jRadioButton7))
+                                .addComponent(btnQuickSort))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -159,10 +159,10 @@ public class SortsView extends javax.swing.JFrame {
                     .addComponent(PanelOptions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jRadioButton4)
-                            .addComponent(jRadioButton5)
-                            .addComponent(jRadioButton6)
-                            .addComponent(jRadioButton7))
+                            .addComponent(btnSelectedSort)
+                            .addComponent(btnInsertSort)
+                            .addComponent(btnMergeSort)
+                            .addComponent(btnQuickSort))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -215,18 +215,18 @@ public class SortsView extends javax.swing.JFrame {
     private javax.swing.ButtonGroup GrupoOpcoes;
     private javax.swing.ButtonGroup GrupoSorts;
     private javax.swing.JPanel PanelOptions;
+    private javax.swing.JRadioButton btn1000d;
+    private javax.swing.JRadioButton btn100d;
+    private javax.swing.JRadioButton btn10d;
+    private javax.swing.JRadioButton btnInsertSort;
+    private javax.swing.JRadioButton btnMergeSort;
+    private javax.swing.JRadioButton btnQuickSort;
+    private javax.swing.JRadioButton btnSelectedSort;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
-    private javax.swing.JRadioButton jRadioButton5;
-    private javax.swing.JRadioButton jRadioButton6;
-    private javax.swing.JRadioButton jRadioButton7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextArea txtDestino;
