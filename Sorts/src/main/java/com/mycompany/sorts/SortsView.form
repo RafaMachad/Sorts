@@ -39,18 +39,18 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="btnSelectedSort" min="-2" pref="112" max="-2" attributes="0"/>
+                              <Component id="rbtSelectedSort" min="-2" pref="112" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="btnInsertSort" min="-2" pref="110" max="-2" attributes="0"/>
+                              <Component id="rbtInsertSort" min="-2" pref="110" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="btnMergeSort" min="-2" max="-2" attributes="0"/>
+                              <Component id="rbtMargeSort" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="btnQuickSort" min="-2" max="-2" attributes="0"/>
+                              <Component id="rbtQuickSort" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
                               <Component id="jComboBox1" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
-                              <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnOrdenar" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -69,15 +69,15 @@
                   <Component id="PanelOptions" min="-2" max="-2" attributes="0"/>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="btnSelectedSort" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnInsertSort" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnMergeSort" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnQuickSort" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="rbtSelectedSort" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="rbtInsertSort" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="rbtMargeSort" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="rbtQuickSort" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnOrdenar" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                   </Group>
@@ -118,9 +118,9 @@
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="btn10d" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="btn100d" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="btn1000d" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jRadioButton1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jRadioButton2" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jRadioButton3" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
@@ -135,11 +135,11 @@
                   <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                   <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="btn10d" min="-2" max="-2" attributes="0"/>
+                  <Component id="jRadioButton1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="btn100d" min="-2" max="-2" attributes="0"/>
+                  <Component id="jRadioButton2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="btn1000d" min="-2" max="-2" attributes="0"/>
+                  <Component id="jRadioButton3" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jSeparator1" min="-2" pref="10" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
@@ -158,7 +158,7 @@
             <Property name="text" type="java.lang.String" value="Op&#xe7;&#xf5;es:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JRadioButton" name="btn10d">
+        <Component class="javax.swing.JRadioButton" name="jRadioButton1">
           <Properties>
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
               <ComponentRef name="GrupoOpcoes"/>
@@ -166,7 +166,7 @@
             <Property name="text" type="java.lang.String" value="10 digitos"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JRadioButton" name="btn100d">
+        <Component class="javax.swing.JRadioButton" name="jRadioButton2">
           <Properties>
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
               <ComponentRef name="GrupoOpcoes"/>
@@ -174,7 +174,7 @@
             <Property name="text" type="java.lang.String" value="100 digitos"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JRadioButton" name="btn1000d">
+        <Component class="javax.swing.JRadioButton" name="jRadioButton3">
           <Properties>
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
               <ComponentRef name="GrupoOpcoes"/>
@@ -219,7 +219,7 @@
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JRadioButton" name="btnSelectedSort">
+    <Component class="javax.swing.JRadioButton" name="rbtSelectedSort">
       <Properties>
         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
           <ComponentRef name="GrupoSorts"/>
@@ -227,7 +227,7 @@
         <Property name="text" type="java.lang.String" value="SelectedSort"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JRadioButton" name="btnInsertSort">
+    <Component class="javax.swing.JRadioButton" name="rbtInsertSort">
       <Properties>
         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
           <ComponentRef name="GrupoSorts"/>
@@ -235,7 +235,7 @@
         <Property name="text" type="java.lang.String" value="InserSort"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JRadioButton" name="btnMergeSort">
+    <Component class="javax.swing.JRadioButton" name="rbtMargeSort">
       <Properties>
         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
           <ComponentRef name="GrupoSorts"/>
@@ -243,7 +243,7 @@
         <Property name="text" type="java.lang.String" value="MergeSort"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JRadioButton" name="btnQuickSort">
+    <Component class="javax.swing.JRadioButton" name="rbtQuickSort">
       <Properties>
         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
           <ComponentRef name="GrupoSorts"/>
@@ -251,10 +251,13 @@
         <Property name="text" type="java.lang.String" value="QuickSort"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton2">
+    <Component class="javax.swing.JButton" name="btnOrdenar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Reordenar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnOrdenarActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
