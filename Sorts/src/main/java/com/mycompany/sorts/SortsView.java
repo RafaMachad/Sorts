@@ -16,8 +16,9 @@ public class SortsView extends javax.swing.JFrame {
      * Creates new form SortsView
      */
     public SortsView() {
-        initComponents();
 
+        initComponents();
+        MetodosSorts sl = new MetodosSorts();
     }
 
     /**
@@ -31,6 +32,7 @@ public class SortsView extends javax.swing.JFrame {
 
         GrupoOpcoes = new javax.swing.ButtonGroup();
         GrupoSorts = new javax.swing.ButtonGroup();
+        GrupoOrdem = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         PanelOptions = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -38,15 +40,23 @@ public class SortsView extends javax.swing.JFrame {
         btn100d = new javax.swing.JRadioButton();
         btn1000d = new javax.swing.JRadioButton();
         jSeparator1 = new javax.swing.JSeparator();
-        jButton1 = new javax.swing.JButton();
+        btnGerarVetor = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtDestino = new javax.swing.JTextArea();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        rbtSelectedSort = new javax.swing.JRadioButton();
-        rbtInsertSort = new javax.swing.JRadioButton();
-        rbtMargeSort = new javax.swing.JRadioButton();
-        rbtQuickSort = new javax.swing.JRadioButton();
-        btnReordenar = new javax.swing.JButton();
+        btnSelectedSort = new javax.swing.JRadioButton();
+        btnInsertSort = new javax.swing.JRadioButton();
+        btnMergeSort = new javax.swing.JRadioButton();
+        btnQuickSort = new javax.swing.JRadioButton();
+        btnReordenarVetor = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        rdCrescente = new javax.swing.JRadioButton();
+        rdDecrescente = new javax.swing.JRadioButton();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        txtTime = new javax.swing.JTextField();
+        jSeparator2 = new javax.swing.JSeparator();
+        jLabel5 = new javax.swing.JLabel();
+        txtTrocas = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -60,14 +70,34 @@ public class SortsView extends javax.swing.JFrame {
 
         GrupoOpcoes.add(btn10d);
         btn10d.setText("10 digitos");
+        btn10d.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn10dActionPerformed(evt);
+            }
+        });
 
         GrupoOpcoes.add(btn100d);
         btn100d.setText("100 digitos");
+        btn100d.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn100dActionPerformed(evt);
+            }
+        });
 
         GrupoOpcoes.add(btn1000d);
         btn1000d.setText("1000 digitos");
+        btn1000d.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn1000dActionPerformed(evt);
+            }
+        });
 
-        jButton1.setText("Gerar Vetor");
+        btnGerarVetor.setText("Gerar Vetor");
+        btnGerarVetor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGerarVetorActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout PanelOptionsLayout = new javax.swing.GroupLayout(PanelOptions);
         PanelOptions.setLayout(PanelOptionsLayout);
@@ -77,7 +107,7 @@ public class SortsView extends javax.swing.JFrame {
             .addGroup(PanelOptionsLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(PanelOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 193, Short.MAX_VALUE)
+                    .addComponent(btnGerarVetor, javax.swing.GroupLayout.DEFAULT_SIZE, 193, Short.MAX_VALUE)
                     .addGroup(PanelOptionsLayout.createSequentialGroup()
                         .addGroup(PanelOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
@@ -101,30 +131,89 @@ public class SortsView extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
+                .addComponent(btnGerarVetor)
                 .addGap(0, 16, Short.MAX_VALUE))
         );
 
+        txtDestino.setEditable(false);
         txtDestino.setColumns(20);
         txtDestino.setLineWrap(true);
         txtDestino.setRows(5);
         jScrollPane1.setViewportView(txtDestino);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ascendente", "Descendente" }));
+        GrupoSorts.add(btnSelectedSort);
+        btnSelectedSort.setText("SelectedSort");
 
-        GrupoSorts.add(rbtSelectedSort);
-        rbtSelectedSort.setText("SelectedSort");
+        GrupoSorts.add(btnInsertSort);
+        btnInsertSort.setText("InserSort");
 
-        GrupoSorts.add(rbtInsertSort);
-        rbtInsertSort.setText("InserSort");
+        GrupoSorts.add(btnMergeSort);
+        btnMergeSort.setText("MergeSort");
 
-        GrupoSorts.add(rbtMargeSort);
-        rbtMargeSort.setText("MergeSort");
+        GrupoSorts.add(btnQuickSort);
+        btnQuickSort.setText("QuickSort");
 
-        GrupoSorts.add(rbtQuickSort);
-        rbtQuickSort.setText("QuickSort");
+        btnReordenarVetor.setText("Reordenar");
+        btnReordenarVetor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnReordenarVetorActionPerformed(evt);
+            }
+        });
 
-        btnReordenar.setText("Reordenar");
+        jLabel3.setText("Ordem:");
+
+        GrupoOrdem.add(rdCrescente);
+        rdCrescente.setText("Crescente");
+
+        GrupoOrdem.add(rdDecrescente);
+        rdDecrescente.setText("Decrescente");
+
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel4.setText("<html>Tempo para<br>a ordenação:");
+
+        txtTime.setEditable(false);
+        txtTime.setColumns(5);
+        txtTime.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel5.setText("<html>Numero <br>de Trocas:");
+
+        txtTrocas.setEditable(false);
+        txtTrocas.setColumns(5);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtTime, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(95, 95, 95)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtTrocas, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jSeparator2)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+                    .addComponent(txtTime)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(txtTrocas))
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -132,26 +221,31 @@ public class SortsView extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 954, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(PanelOptions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(rbtSelectedSort, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnSelectedSort, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(rbtInsertSort, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnInsertSort, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(rbtMargeSort)
+                                .addComponent(btnMergeSort)
                                 .addGap(18, 18, 18)
-                                .addComponent(rbtQuickSort))
+                                .addComponent(btnQuickSort))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel3)
+                                .addGap(18, 18, 18)
+                                .addComponent(rdCrescente)
+                                .addGap(18, 18, 18)
+                                .addComponent(rdDecrescente)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnReordenar)))))
-                .addContainerGap(15, Short.MAX_VALUE))
+                                .addComponent(btnReordenarVetor))))
+                    .addComponent(jScrollPane1)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -163,18 +257,22 @@ public class SortsView extends javax.swing.JFrame {
                     .addComponent(PanelOptions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(rbtSelectedSort)
-                            .addComponent(rbtInsertSort)
-                            .addComponent(rbtMargeSort)
-                            .addComponent(rbtQuickSort))
+                            .addComponent(btnSelectedSort)
+                            .addComponent(btnInsertSort)
+                            .addComponent(btnMergeSort)
+                            .addComponent(btnQuickSort))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnReordenar))
+                            .addComponent(btnReordenarVetor)
+                            .addComponent(jLabel3)
+                            .addComponent(rdCrescente)
+                            .addComponent(rdDecrescente))
                         .addGap(8, 8, 8)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(53, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(70, Short.MAX_VALUE))
         );
 
         pack();
@@ -188,14 +286,14 @@ public class SortsView extends javax.swing.JFrame {
             int[] arr = new int[10];
             for (int i = 0; i < arr.length; i++) {
                 arr[i] = rand.nextInt(99);
-                txtDestino.append(String.valueOf(arr[i]) + ", ");
+                txtDestino.append(String.valueOf(arr[i]) + " ");
 
             }
         } else if (btn100d.isSelected() == true) {
             int[] arr = new int[100];
             for (int i = 0; i < arr.length; i++) {
                 arr[i] = rand.nextInt(99);
-                txtDestino.append(String.valueOf(arr[i]) + ", ");
+                txtDestino.append(String.valueOf(arr[i]) + " ");
 
             }
 
@@ -203,13 +301,153 @@ public class SortsView extends javax.swing.JFrame {
             int[] arr = new int[1000];
             for (int i = 0; i < arr.length; i++) {
                 arr[i] = rand.nextInt(99);
-                txtDestino.append(String.valueOf(arr[i]) + ", ");
+                txtDestino.append(String.valueOf(arr[i]) + " ");
             }
         }
     }//GEN-LAST:event_btnGerarVetorActionPerformed
 
     private void btnReordenarVetorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReordenarVetorActionPerformed
-        // TODO add your handling code here:
+        
+        if (btnSelectedSort.isSelected() == true) {
+            long tempoInicial = System.currentTimeMillis();
+            MetodosSorts sl = new MetodosSorts();
+            String texto = txtDestino.getText().trim();
+            String[] numeros = texto.split("\\s+");
+
+            int[] vetor = new int[numeros.length];
+            for (int i = 0; i < numeros.length; i++) {
+                if (!numeros[i].isEmpty()) {
+                    try {
+                        vetor[i] = Integer.parseInt(numeros[i]);
+                    } catch (NumberFormatException e) {
+
+                    }
+                }
+            }
+            if(rdDecrescente.isSelected() == true){
+            sl.selectionSortMenor(vetor);
+            }else {
+                sl.selectionSort(vetor);
+            }
+            // Exibir o vetor ordenado
+            StringBuilder sb = new StringBuilder();
+            for (int num : vetor) {
+                sb.append(num).append(" ");
+            }
+            txtDestino.setText(sb.toString().trim());
+            txtTime.setText(String.valueOf((System.currentTimeMillis())-tempoInicial));
+            txtTrocas.setText(String.valueOf(sl.numTrocas));
+        }
+        
+        
+        
+        if(btnInsertSort.isSelected()==true){
+        long tempoInicial = System.currentTimeMillis();
+            MetodosSorts sl = new MetodosSorts();
+            String texto = txtDestino.getText().trim();
+            String[] numeros = texto.split("\\s+");
+
+            int[] vetor = new int[numeros.length];
+            for (int i = 0; i < numeros.length; i++) {
+                if (!numeros[i].isEmpty()) {
+                    try {
+                        vetor[i] = Integer.parseInt(numeros[i]);
+                    } catch (NumberFormatException e) {
+
+                    }
+                }
+            }
+            if(rdDecrescente.isSelected() == true){
+            sl.InsertSortMenor(vetor);
+            }else {
+                sl.InsertSort(vetor);
+            }
+            // Exibir o vetor ordenado
+            StringBuilder sb = new StringBuilder();
+            for (int num : vetor) {
+                sb.append(num).append(" ");
+            }
+            txtDestino.setText(sb.toString().trim());
+            txtTime.setText(String.valueOf((System.currentTimeMillis())-tempoInicial));
+            txtTrocas.setText(String.valueOf(sl.numTrocas));
+        }
+        
+        if(btnQuickSort.isSelected()==true){
+            long tempoInicial = System.currentTimeMillis();
+            QuickSort qs = new QuickSort();
+            MetodosSorts ms = new MetodosSorts();
+            String texto = txtDestino.getText().trim();
+            String[] numeros = texto.split("\\s+");
+
+            int[] vetor = new int[numeros.length];
+            for (int i = 0; i < numeros.length; i++) {
+                if (!numeros[i].isEmpty()) {
+                    try {
+                        vetor[i] = Integer.parseInt(numeros[i]);
+                    } catch (NumberFormatException e) {
+
+                    }
+                }
+            }
+            if(rdDecrescente.isSelected() == true){
+            ms.quickSort(vetor);
+            }else {
+                qs.quickSort(vetor);
+            }
+            // Exibir o vetor ordenado
+            StringBuilder sb = new StringBuilder();
+            for (int num : vetor) {
+                sb.append(num).append(" ");
+            }
+            txtDestino.setText(sb.toString().trim());
+            txtTime.setText(String.valueOf((System.currentTimeMillis())-tempoInicial));
+            if(rdDecrescente.isSelected()== true){txtTrocas.setText(String.valueOf(ms.numTrocas));
+            }else
+            txtTrocas.setText(String.valueOf(qs.numTrocas));
+        }
+        if(btnMergeSort.isSelected()==true){
+            
+        long tempoInicial = System.currentTimeMillis();
+            MetodosSorts sl = new MetodosSorts();
+            QuickSort qs = new QuickSort();
+            String texto = txtDestino.getText().trim();
+            String[] numeros = texto.split("\\s+");
+
+            int[] vetor = new int[numeros.length];
+            for (int i = 0; i < numeros.length; i++) {
+                if (!numeros[i].isEmpty()) {
+                    try {
+                        vetor[i] = Integer.parseInt(numeros[i]);
+                    } catch (NumberFormatException e) {
+
+                    }
+                }
+            }
+            if(rdDecrescente.isSelected() == true){
+            qs.mergeSort(vetor);
+            }else {
+                sl.mergeSort(vetor);
+            }
+            // Exibir o vetor ordenado
+            StringBuilder sb = new StringBuilder();
+            for (int num : vetor) {
+                sb.append(num).append(" ");
+            }
+            txtDestino.setText(sb.toString().trim());
+            txtTime.setText(String.valueOf((System.currentTimeMillis())-tempoInicial));
+            if(rdDecrescente.isSelected()==true){txtTrocas.setText(String.valueOf(qs.numTrocas));
+            }else
+            txtTrocas.setText(String.valueOf(sl.numTrocas));
+        }
+            
+        
+        
+        
+        
+        
+        
+        
+        
     }//GEN-LAST:event_btnReordenarVetorActionPerformed
 
     private void btn10dActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn10dActionPerformed
@@ -264,22 +502,31 @@ public class SortsView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup GrupoOpcoes;
+    private javax.swing.ButtonGroup GrupoOrdem;
     private javax.swing.ButtonGroup GrupoSorts;
     private javax.swing.JPanel PanelOptions;
     private javax.swing.JRadioButton btn1000d;
     private javax.swing.JRadioButton btn100d;
     private javax.swing.JRadioButton btn10d;
-    private javax.swing.JButton btnReordenar;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JButton btnGerarVetor;
+    private javax.swing.JRadioButton btnInsertSort;
+    private javax.swing.JRadioButton btnMergeSort;
+    private javax.swing.JRadioButton btnQuickSort;
+    private javax.swing.JButton btnReordenarVetor;
+    private javax.swing.JRadioButton btnSelectedSort;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JRadioButton rbtInsertSort;
-    private javax.swing.JRadioButton rbtMargeSort;
-    private javax.swing.JRadioButton rbtQuickSort;
-    private javax.swing.JRadioButton rbtSelectedSort;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JRadioButton rdCrescente;
+    private javax.swing.JRadioButton rdDecrescente;
     private javax.swing.JTextArea txtDestino;
+    private javax.swing.JTextField txtTime;
+    private javax.swing.JTextField txtTrocas;
     // End of variables declaration//GEN-END:variables
 }
