@@ -247,8 +247,62 @@ public class SortsView extends javax.swing.JFrame {
 //            }
 
         
-        
-        
+              //marge sorte
+              
+//              public static void mergeSort(int[] vetor) {
+//        if (vetor.length <= 1) {
+//            return;
+//        }
+//        
+//        int meio = vetor.length / 2;
+//        int[] vetorEsquerda = new int[meio];
+//        int[] vetorDireita = new int[vetor.length - meio];
+//        
+//        System.arraycopy(vetor, 0, vetorEsquerda, 0, meio);
+//        System.arraycopy(vetor, meio, vetorDireita, 0, vetor.length - meio);
+//        
+//        mergeSort(vetorEsquerda);
+//        mergeSort(vetorDireita);
+//        
+//        merge(vetor, vetorEsquerda, vetorDireita);
+//    }
+//        
+//              
+//         public static void merge(int[] vetor, int[] vetorEsquerda, int[] vetorDireita) {
+//        int i = 0, j = 0, k = 0;
+//        
+//        while (i < vetorEsquerda.length && j < vetorDireita.length) {
+//            if (vetorEsquerda[i] <= vetorDireita[j]) {
+//                vetor[k] = vetorEsquerda[i];
+//                i++;
+//            } else {
+//                vetor[k] = vetorDireita[j];
+//                j++;
+//            }
+//            k++;
+//        }
+//        
+//        while (i < vetorEsquerda.length) {
+//            vetor[k] = vetorEsquerda[i];
+//            i++;
+//            k++;
+//        }
+//        
+//        while (j < vetorDireita.length) {
+//            vetor[k] = vetorDireita[j];
+//            j++;
+//            k++;
+//        }
+//    }
+//
+//    public static void printArray(int[] vetor) {
+//        for (int num : vetor) {
+//            System.out.print(num + " ");
+//        }
+//        System.out.println();
+//    }
+//}      
+              
         
         
         
